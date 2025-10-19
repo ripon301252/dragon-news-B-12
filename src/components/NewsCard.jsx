@@ -1,6 +1,7 @@
 import React from "react";
 import { FaEye, FaStar } from "react-icons/fa";
 import { IoBookmarksSharp } from "react-icons/io5";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
@@ -11,6 +12,7 @@ const NewsCard = ({ news }) => {
     thumbnail_url,
     details,
     tags,
+    id,
   } = news;
 
   return (
@@ -53,9 +55,9 @@ const NewsCard = ({ news }) => {
         {/* Details */}
         <p className="text-gray-700  mb-3">
           {details.slice(0, 150)}...
-          <span className="text-blue-500 cursor-pointer hover:underline ">
+          <Link to={`/news-details/${id}`}  className="text-blue-500 cursor-pointer hover:underline ">
             Read more 
-          </span>
+          </Link>
         </p>
 
 
